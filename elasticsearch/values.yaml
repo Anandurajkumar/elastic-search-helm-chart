@@ -1740,7 +1740,7 @@ ingest:
 metrics:
   ## @param metrics.enabled Enable prometheus exporter
   ##
-  enabled: true
+  enabled: false
   ## @param metrics.nameOverride Metrics pod name
   ##
   nameOverride: ""
