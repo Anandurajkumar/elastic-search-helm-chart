@@ -208,11 +208,11 @@ image:
 security:
   ## @param security.enabled Enable X-Pack Security settings
   ##
-  enabled: false
+  enabled: true
   ## @param security.elasticPassword Password for 'elastic' user
   ## Ref: https://github.com/bitnami/containers/tree/main/bitnami/elasticsearch#security
   ##
-  elasticPassword: ""
+  elasticPassword: "password"
   ## @param security.existingSecret Name of the existing secret containing the Elasticsearch password and
   ##
   existingSecret: ""
