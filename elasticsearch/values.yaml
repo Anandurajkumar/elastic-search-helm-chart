@@ -292,7 +292,7 @@ security:
 service:
   ## @param service.type Elasticsearch service type
   ##
-  type: ClusterIP
+  type: LoadBalancer
   ## @param service.ports.restAPI Elasticsearch service REST API port
   ## @param service.ports.transport Elasticsearch service transport port
   ##
@@ -458,7 +458,7 @@ master:
   masterOnly: true
   ## @param master.replicaCount Number of master-elegible replicas to deploy
   ##
-  replicaCount: 2
+  replicaCount: 1
   ## @param master.nameOverride String to partially override elasticsearch.master.fullname
   ##
   nameOverride: ""
@@ -604,7 +604,7 @@ master:
   ## @param master.livenessProbe.failureThreshold Minimum consecutive failures for the probe to be considered failed after having succeeded
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 90
     periodSeconds: 10
     timeoutSeconds: 5
@@ -618,7 +618,7 @@ master:
   ## @param master.readinessProbe.failureThreshold Minimum consecutive failures for the probe to be considered failed after having succeeded
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 90
     periodSeconds: 10
     timeoutSeconds: 5
@@ -688,7 +688,7 @@ master:
   persistence:
     ## @param master.persistence.enabled Enable persistence using a `PersistentVolumeClaim`
     ##
-    enabled: true
+    enabled: false
     ## @param master.persistence.storageClass Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -742,7 +742,7 @@ master:
   ## @param master.autoscaling.targetMemory Define the memory target to trigger the scaling actions (utilization percentage)
   ##
   autoscaling:
-    enabled: true
+    enabled: false
     minReplicas: 1
     maxReplicas: 2
     targetCPU: "50"
@@ -753,7 +753,7 @@ master:
 data:
   ## @param data.replicaCount Number of data-only replicas to deploy
   ##
-  replicaCount: 2
+  replicaCount: 1
   ## @param data.nameOverride String to partially override elasticsearch.data.fullname
   ##
   nameOverride: ""
@@ -899,7 +899,7 @@ data:
   ## @param data.livenessProbe.failureThreshold Minimum consecutive failures for the probe to be considered failed after having succeeded
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 90
     periodSeconds: 10
     timeoutSeconds: 5
@@ -913,7 +913,7 @@ data:
   ## @param data.readinessProbe.failureThreshold Minimum consecutive failures for the probe to be considered failed after having succeeded
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 90
     periodSeconds: 10
     timeoutSeconds: 5
@@ -983,7 +983,7 @@ data:
   persistence:
     ## @param data.persistence.enabled Enable persistence using a `PersistentVolumeClaim`
     ##
-    enabled: true
+    enabled: false
     ## @param data.persistence.storageClass Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -1037,7 +1037,7 @@ data:
   ## @param data.autoscaling.targetMemory Define the memory target to trigger the scaling actions (utilization percentage)
   ##
   autoscaling:
-    enabled: true
+    enabled: false
     minReplicas: 1
     maxReplicas: 2
     targetCPU: "25"
@@ -1048,7 +1048,7 @@ data:
 coordinating:
   ## @param coordinating.replicaCount Number of coordinating-only replicas to deploy
   ##
-  replicaCount: 2
+  replicaCount: 1
   ## @param coordinating.nameOverride String to partially override elasticsearch.coordinating.fullname
   ##
   nameOverride: ""
@@ -1194,7 +1194,7 @@ coordinating:
   ## @param coordinating.livenessProbe.failureThreshold Minimum consecutive failures for the probe to be considered failed after having succeeded
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 90
     periodSeconds: 10
     timeoutSeconds: 5
@@ -1208,7 +1208,7 @@ coordinating:
   ## @param coordinating.readinessProbe.failureThreshold Minimum consecutive failures for the probe to be considered failed after having succeeded
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 90
     periodSeconds: 10
     timeoutSeconds: 5
@@ -1307,7 +1307,7 @@ ingest:
   enabled: true
   ## @param ingest.replicaCount Number of ingest-only replicas to deploy
   ##
-  replicaCount: 2
+  replicaCount: 1
   ## @param ingest.nameOverride String to partially override elasticsearch.ingest.fullname
   ##
   nameOverride: ""
@@ -1459,7 +1459,7 @@ ingest:
   ## @param ingest.livenessProbe.failureThreshold Minimum consecutive failures for the probe to be considered failed after having succeeded
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 90
     periodSeconds: 10
     timeoutSeconds: 5
@@ -1473,7 +1473,7 @@ ingest:
   ## @param ingest.readinessProbe.failureThreshold Minimum consecutive failures for the probe to be considered failed after having succeeded
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 90
     periodSeconds: 10
     timeoutSeconds: 5
@@ -1558,7 +1558,7 @@ ingest:
   ## @param ingest.autoscaling.targetMemory Define the memory target to trigger the scaling actions (utilization percentage)
   ##
   autoscaling:
-    enabled: true
+    enabled: false
     minReplicas: 1
     maxReplicas: 2
     targetCPU: "30"
